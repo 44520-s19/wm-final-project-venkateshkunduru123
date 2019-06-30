@@ -170,9 +170,9 @@ for i in (total_info_dict):
 
 # visualization
 import matplotlib.pyplot as plt
-import matplotlib.style as style
-style.use('default')
-style.use('seaborn-poster')
+import matplotlib.style as style3
+style3.use('default')
+style3.use('seaborn-dark')
 #style.use('seaborn-talk')
 import numpy as np
 
@@ -199,7 +199,7 @@ ax.set_yticks(y_pos)
 ax.set_xticks([0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
 ax.set_yticklabels(team_tuple)
 for i, v in enumerate(win_tuple):
-    ax.text(v + 1, i + 0.17, str(v)+' %', color='black')
+    ax.text(v + 1, i + 0.17, str(v)+' % (Won: ' + str(total_info_dict[team_tuple[i]][1]) + ' out of ' + str(total_info_dict[team_tuple[i]][0]) + ' matches)', color='black')
 ax.invert_yaxis()  # labels read top-to-bottom
 ax.set_xlabel('Percentage')
 ax.set_ylabel('IPL Teams')
@@ -211,9 +211,9 @@ plt.show()
 
 # IPL Teams lose Percentage chart
 import matplotlib.pyplot as plt
-import matplotlib.style as style
-style.use('default')
-style.use('seaborn-poster')
+import matplotlib.style as style2
+style2.use('default')
+style2.use('seaborn-poster')
 
 import numpy as np
 
@@ -225,7 +225,7 @@ ax.set_yticks(y_pos)
 ax.set_xticks([0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
 ax.set_yticklabels(team_tuple)
 for i, v in enumerate(lose_tuple):
-    ax.text(v + 1, i + 0.17, str(v)+' %', color='black')
+    ax.text(v + 1, i + 0.17, str(v)+' % (Lost: ' + str(total_info_dict[team_tuple[i]][2]) + ' out of ' + str(total_info_dict[team_tuple[i]][0]) + ' matches)', color='black')
 ax.invert_yaxis()  # labels read top-to-bottom
 ax.set_xlabel('Percentage')
 ax.set_ylabel('IPL Teams')
@@ -237,9 +237,9 @@ plt.show()
 
 # IPL Teams tie Percentage chart
 import matplotlib.pyplot as plt
-import matplotlib.style as style
-style.use('default')
-style.use('seaborn-poster')
+import matplotlib.style as style1
+style1.use('default')
+style1.use('seaborn-dark')
 
 import numpy as np
 
@@ -260,13 +260,12 @@ ax.set_title('IPL Teams Tie Percentage chart')
 plt.show()
 
 # sixth snippet
-
 # Three results in one chart
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.style as style
 style.use('default')
-#style.use('seaborn-poster')
+style.use('bmh')
 
 N = len(team_tuple)
 ind = np.arange(N)  # the x locations for the groups
