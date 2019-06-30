@@ -197,13 +197,13 @@ y_pos = np.arange(len(team_tuple))
 ax.barh(y_pos, win_tuple, color="green")
 ax.set_yticks(y_pos)
 ax.set_xticks([0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
-ax.set_yticklabels(team_tuple)
+ax.set_yticklabels(team_tuple,fontweight='bold')
 for i, v in enumerate(win_tuple):
-    ax.text(v + 1, i + 0.17, str(v)+' % (Won: ' + str(total_info_dict[team_tuple[i]][1]) + ' out of ' + str(total_info_dict[team_tuple[i]][0]) + ' matches)', color='black')
+    ax.text(v + 1, i + 0.17, str(v)+' % (Won: ' + str(total_info_dict[team_tuple[i]][1]) + ' out of ' + str(total_info_dict[team_tuple[i]][0]) + ' matches)', color='black', fontweight='bold')
 ax.invert_yaxis()  # labels read top-to-bottom
-ax.set_xlabel('Percentage')
-ax.set_ylabel('IPL Teams')
-ax.set_title('IPL Teams Win Percentage chart')
+ax.set_xlabel('Percentage',fontweight='bold')
+ax.set_ylabel('IPL Teams',fontweight='bold')
+ax.set_title('IPL Teams Win Percentage chart',fontweight='bold')
 
 plt.show()
 
@@ -223,13 +223,13 @@ fig, ax = plt.subplots()
 ax.barh(y_pos, lose_tuple, color="red")
 ax.set_yticks(y_pos)
 ax.set_xticks([0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
-ax.set_yticklabels(team_tuple)
+ax.set_yticklabels(team_tuple,fontweight='bold')
 for i, v in enumerate(lose_tuple):
-    ax.text(v + 1, i + 0.17, str(v)+' % (Lost: ' + str(total_info_dict[team_tuple[i]][2]) + ' out of ' + str(total_info_dict[team_tuple[i]][0]) + ' matches)', color='black')
+    ax.text(v + 1, i + 0.17, str(v)+' % (Lost: ' + str(total_info_dict[team_tuple[i]][2]) + ' out of ' + str(total_info_dict[team_tuple[i]][0]) + ' matches)', color='black', fontweight='bold')
 ax.invert_yaxis()  # labels read top-to-bottom
-ax.set_xlabel('Percentage')
-ax.set_ylabel('IPL Teams')
-ax.set_title('IPL Teams Lose Percentage chart')
+ax.set_xlabel('Percentage',fontweight='bold')
+ax.set_ylabel('IPL Teams',fontweight='bold')
+ax.set_title('IPL Teams Lose Percentage chart',fontweight='bold')
 
 plt.show()
 
@@ -249,13 +249,13 @@ fig, ax = plt.subplots()
 ax.barh(y_pos, tie_tuple, color="yellow")
 ax.set_yticks(y_pos)
 ax.set_xticks([0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
-ax.set_yticklabels(team_tuple)
+ax.set_yticklabels(team_tuple,fontweight='bold')
 for i, v in enumerate(tie_tuple):
-    ax.text(v + 1, i + 0.17, str(v)+' %', color='black')
+    ax.text(v + 1, i + 0.17, str(v)+' %', color='black', fontweight='bold')
 ax.invert_yaxis()  # labels read top-to-bottom
-ax.set_xlabel('Percentage')
-ax.set_ylabel('IPL Teams')
-ax.set_title('IPL Teams Tie Percentage chart')
+ax.set_xlabel('Percentage',fontweight='bold')
+ax.set_ylabel('IPL Teams',fontweight='bold')
+ax.set_title('IPL Teams Tie Percentage chart',fontweight='bold')
 
 plt.show()
 
@@ -278,22 +278,22 @@ rects2 = ax.bar(ind+width, lose_tuple, width, color='r')
 rects3 = ax.bar(ind+width*2, tie_tuple, width, color='y')
 
 
-ax.set_ylabel('Percentage')
-ax.set_xlabel('Teams')
+ax.set_ylabel('Percentage',fontweight='bold')
+ax.set_xlabel('Teams',fontweight='bold')
 ax.set_yticks([0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
 ax.set_xticks(ind+width)
-ax.set_xticklabels(team_tuple, rotation=20, ha='right', va='top')
+ax.set_xticklabels(team_tuple, rotation=20, ha='right', va='top',fontweight='bold')
 ax.legend( (rects1[0], rects2[0], rects3[0]), ('Won %', 'Lose %', 'Tie %') )
 
 def autolabel(rects):
     for rect in rects:
         h = rect.get_height()
         ax.text(rect.get_x()+rect.get_width()/2., 1.05*h, '%.2f'%(h),
-                ha='center', va='bottom', rotation = 90)
+                ha='center', va='bottom', rotation = 90, fontweight='bold')
 
 autolabel(rects1)
 autolabel(rects2)
 autolabel(rects3)
 
-plt.title('IPL Teams Result Chart')
+plt.title('IPL Teams Result Chart',fontweight='bold')
 plt.show()
