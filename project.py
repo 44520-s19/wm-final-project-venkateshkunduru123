@@ -167,13 +167,13 @@ for i in (total_info_dict):
 #print(tie_percent)
 
 # third snippet
-
+'''
 # visualization
 import matplotlib.pyplot as plt
 import matplotlib.style as style3
 style3.use('default')
-style3.use('seaborn-dark')
-#style.use('seaborn-talk')
+#style3.use('seaborn-dark')
+style3.use('seaborn-talk')
 import numpy as np
 
 plt.rcdefaults()
@@ -213,7 +213,7 @@ plt.show()
 import matplotlib.pyplot as plt
 import matplotlib.style as style2
 style2.use('default')
-style2.use('seaborn-poster')
+style2.use('seaborn-talk')
 
 import numpy as np
 
@@ -239,7 +239,7 @@ plt.show()
 import matplotlib.pyplot as plt
 import matplotlib.style as style1
 style1.use('default')
-style1.use('seaborn-dark')
+style1.use('seaborn-talk')
 
 import numpy as np
 
@@ -258,6 +258,7 @@ ax.set_ylabel('IPL Teams',fontweight='bold')
 ax.set_title('IPL Teams Tie Percentage chart',fontweight='bold')
 
 plt.show()
+'''
 
 # sixth snippet
 # Three results in one chart
@@ -265,7 +266,20 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.style as style
 style.use('default')
-style.use('bmh')
+style.use('seaborn-poster')
+
+# Example data
+team = win_percent.keys()
+wins = win_percent.values()
+loses = lose_percent.values()
+ties = tie_percent.values()
+team_tuple = tuple(team)
+win_tuple = tuple(wins)
+lose_tuple = tuple(loses)
+tie_tuple = tuple(ties)
+#print(team_tuple)
+#print(win_tuple)
+#print(lose_tuple)
 
 N = len(team_tuple)
 ind = np.arange(N)  # the x locations for the groups
